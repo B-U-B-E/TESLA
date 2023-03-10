@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6b281d38f1.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./images/bubePlav.ico" type="image/x-icon">
+    <title>TESLA</title>
+</head>
+
+<style>
+    .music {
+        background-color: #e44c65;
+        padding: 10px;
+        transition: all 0.5s ease-in-out;
+
+    }
+
+    .music:hover {
+        background: none;
+        box-shadow: 0 0 2px 4px #e44c65;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: white;
+    }
+
+    body {
+        background-color: #272833;
+    }
+
+    ul {
+        list-style: none;
+
+
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .section-wrap {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .section-space {
+        padding: 4rem 0;
+    }
+
+    .text-space {
+        margin-bottom: 13px;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    header {
+        background-color: #272833ab;
+        position: relative;
+
+    }
+
+    .view-port {
+        height: 100vh;
+    }
+
+    nav {
+        justify-content: space-between;
+        padding-top: 30px;
+    }
+
+    .car-music {
+        position: relative;
+        font-size: 30px;
+        display: none;
+    }
+
+    .fa-car {
+        position: absolute;
+        font-size: 18px;
+        top: 18px;
+        left: 6px;
+    }
+
+
+
+    li:not(:last-child) {
+        margin-right: 30px;
+    }
+
+    .header {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .header-inner {
+        padding: 10px;
+    }
+
+    .fa-eject {
+        text-align: center;
+        width: 100%;
+        rotate: 180deg;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .plava-img {
+        background: url("./images/picture1.jpg") center/cover no-repeat fixed;
+        height: 100vh;
+        position: relative;
+    }
+
+    .background-content {
+        background-color: #272833ab;
+
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+
+
+    }
+
+    .btn {
+        background: none;
+        border: 1px solid white;
+        padding: 10px;
+        margin-top: 20px;
+        display: inline-block;
+    }
+
+    .plava-img .background-content {
+        border-top: 5px solid #e44c65;
+    }
+
+    .crvena-img .background-content:not(.green) {
+        border-left: 5px solid blue;
+    }
+
+    .crvena-img .background-content.green {
+        border-right: 5px solid green;
+    }
+
+    .plava-text-container {
+        display: inline-block;
+        margin-right: -13px;
+    }
+
+    .plava-text {
+        float: left;
+        width: 33.33%;
+    }
+
+    .plava-text::after {
+        content: "";
+        clear: both;
+    }
+
+    /* .clear-fix{
+        clear: both;
+    } */
+
+
+    .plava-text-inner {
+        margin-right: 13px;
+
+    }
+
+    .content {
+        height: 100%;
+    }
+
+
+
+    .crvena-img {
+        background: url("./images/picture2.jpeg") center/cover no-repeat fixed;
+        height: 50vh;
+        position: relative;
+
+    }
+
+    #crvena .background-content {
+        height: 100%;
+        width: 30%;
+        right: 0;
+    }
+
+    .content-inner>*:not(:last-child) {
+        margin-bottom: 13px;
+
+    }
+
+    .crvena-img:nth-child(2) {
+        background: url("./images/picture3.jpg") center/cover no-repeat fixed;
+
+    }
+
+    #crvena .crvena-img:nth-child(2) .background-content {
+        left: 0;
+
+    }
+
+    .features {
+
+
+        text-align: center;
+
+    }
+
+    .features-header {
+        margin-bottom: 30px;
+    }
+
+    .features-content {
+        padding: 13px;
+    }
+
+    .background-content-contact {
+        background-color: #e44c65;
+    }
+
+    .icons {
+        font-size: 30px;
+
+    }
+
+    i {
+        font-size: 30px;
+    }
+
+    .contact-content {
+        text-align: center;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+    input {
+        background: none;
+        border: none;
+        outline: 1px solid white;
+        padding: 10px;
+
+    }
+
+    input[type=submit] {
+        background-color: white;
+        color: #e44c65;
+
+    }
+
+    input[type="text"]::-webkit-input-placeholder {
+        color: white;
+    }
+
+    .features-header::after {
+        content: "";
+        background-color: #e44c65;
+        width: 100px;
+        height: 3px;
+        display: inline-block;
+        margin-top: 30px;
+    }
+
+
+
+    @media(max-width:1200px) {
+        .background-content {
+            overflow: auto;
+
+        }
+
+
+    }
+
+
+
+
+
+    @media(max-width:1000px) {
+        .section-space {
+            padding: 1rem 0;
+        }
+    }
+
+    @media(max-width:768px) {
+        .grid-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        nav ul.flex {
+            display: none;
+        }
+
+        .car-music {
+            display: block;
+        }
+
+    }
+
+    @media(max-width:425px) {
+        .grid-container {
+            grid-template-columns: 1fr;
+        }
+
+        .plava-img,
+        .crvena-img,
+        .crvena-img:nth-child(2) {
+            background-attachment: scroll;
+        }
+
+        .header,
+        .features-header,
+        .features-content {
+            font-size: 13px;
+        }
+
+        .plava-text-inner,
+        .content-inner {
+            font-size: 8px;
+        }
+
+
+
+
+    }
+</style>
+
+<body>
+    <header>
+        <div class="view-port section-wrap">
+            <nav class="flex">
+                <div>
+                    <a href="https://www.facebook.com/exaltationBook" target="_blank">BUBE</a>
+                </div>
+
+                <ul class="flex">
+                    <li><a href="#plava">Section 1</a> </li>
+                    <li><a href="#crvena">Section 2</a></li>
+                    <li><a href="#end">Section 3</a></li>
+                    <a class="music" href="https://music.youtube.com/playlist?list=PLImSykBvD3Hu0xiSYI0kJ_m2eVCGphS3O">
+                        <li>Music</li>
+                    </a>
+                </ul>
+
+                <div class="car-music">
+                    <a href="https://music.youtube.com/playlist?list=PLImSykBvD3Hu0xiSYI0kJ_m2eVCGphS3O"
+                        target="_blank"><i class="fa-solid fa-car"></i>
+                        <i class="fa-solid fa-headphones"></i>
+                    </a>
+
+                </div>
+
+
+            </nav>
+        </div>
+
+        <div class="header">
+            <div class="header-inner">
+                <h1>The feature has landed</h1>
+                <p>And there are no hoverboards or flying cars.</p>
+                <p>Just apps lots of mother fliping apps.</p>
+            </div>
+        </div>
+
+        <i class="fa-solid fa-eject"></i>
+    </header>
+
+    <section id="plava">
+        <div class="plava-img">
+            <div class="background-content ">
+                <div class="section-wrap section-space">
+
+
+
+
+                    <div class="plava-text-container">
+
+
+                        <div class="plava-text">
+                            <div class="plava-text-inner">
+                                <h2 class="text-space">Odio faucius ipsum integer consequat</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat.</p>
+                            </div>
+                        </div>
+
+                        <div class="plava-text">
+                            <div class="plava-text-inner">
+
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo saepe praesentium
+                                    deserunt
+                                    delectus ab dignissimos dicta, nisi sint non, quisquam similique cupiditate facilis
+                                    corporis
+                                    iste? Numquam, labore. Quidem, id ea!</p>
+                            </div>
+                        </div>
+
+                        <div class="plava-text">
+                            <div class="plava-text-inner ">
+
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo saepe praesentium
+                                    deserunt
+                                    delectus ab dignissimos dicta, nisi sint non, quisquam similique cupiditate facilis
+                                    corporis
+                                    iste? Numquam, labore. Quidem, id ea!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="clear-fix"></div> -->
+
+                </div>
+            </div>
+
+    </section>
+
+    <section id="crvena">
+        <div class="crvena-img">
+            <div class="background-content ">
+
+                <div class="content section-wrap section-space">
+                    <div class="content-inner">
+                        <h2>Lorem ipsum dolor sit amet.</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, beatae!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor delectus officia, ipsam
+                            praesentium provident sed sunt tempore, aliquam beatae in minima totam, molestias
+                            repudiandae.
+                            Quasi dolorum nostrum dolores doloribus dolor.</p>
+
+                        <a class="btn" href="https://music.youtube.com/playlist?list=PLImSykBvD3Hu0xiSYI0kJ_m2eVCGphS3O"
+                            target="_blank">Learn more</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="crvena-img">
+            <div class="background-content green">
+
+                <div class="content section-wrap section-space">
+                    <div class="content-inner">
+                        <h2>Lorem ipsum dolor sit amet.</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, beatae!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor delectus officia, ipsam
+                            praesentium provident sed sunt tempore, aliquam beatae in minima totam, molestias
+                            repudiandae.
+                            Quasi dolorum nostrum dolores doloribus dolor.</p>
+
+                        <a class="btn" href="https://music.youtube.com/playlist?list=PLImSykBvD3Hu0xiSYI0kJ_m2eVCGphS3O"
+                            target="_blank">Learn
+                            more</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="end" class="features section-wrap section-space">
+        <div class="">
+            <div class="features-header">
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, in.</p>
+            </div>
+
+
+            <div>
+                <div class="grid-container">
+                    <div class="features-content">
+
+                        <i class="fa-brands fa-github"></i>
+                        <h2>Lorem, ipsum dolor.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, accusantium.</p>
+
+
+                    </div>
+
+                    <div class="features-content">
+
+                        <i class="fa-brands fa-github"></i>
+                        <h2>Lorem, ipsum dolor.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, accusantium.</p>
+
+
+                    </div>
+
+                    <div class="features-content">
+
+                        <i class="fa-brands fa-github"></i>
+                        <h2>Lorem, ipsum dolor.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, accusantium.</p>
+
+
+                    </div>
+
+                    <div class="features-content">
+
+                        <i class="fa-brands fa-github"></i>
+                        <h2>Lorem, ipsum dolor.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, accusantium.</p>
+
+
+                    </div>
+
+                    <div class="features-content">
+
+                        <i class="fa-brands fa-github"></i>
+                        <h2>Lorem, ipsum dolor.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, accusantium.</p>
+
+
+                    </div>
+
+                    <div class="features-content">
+
+                        <i class="fa-brands fa-github"></i>
+                        <h2>Lorem, ipsum dolor.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, accusantium.</p>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <a class="btn" href="https://music.youtube.com/playlist?list=PLImSykBvD3Hu0xiSYI0kJ_m2eVCGphS3O"
+                target="_blank">MUSIC</a>
+        </div>
+    </section>
+
+    <section id="contact ">
+        <div class="background-content-contact section-space">
+            <div class="contact-content">
+                <h2>Lorem ipsum dolor sit.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+
+                <form action="">
+                    <input type="text" placeholder="enter your email...">
+                    <input type="submit" value="Send email">
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="section-space">
+        <div class="icons">
+            <a href=""><i class="fa-brands fa-github"></i></a>
+            <a href=""><i class="fa-brands fa-gitlab"></i></a>
+            <a href=""><i class="fa-brands fa-bitbucket"></i></a>
+            <a href=""><i class="fa-brands fa-github"></i></a>
+            <a href=""><i class="fa-brands fa-gitlab"></i></a>
+            <a href=""><i class="fa-brands fa-bitbucket"></i></a>
+        </div>
+        <p>coded by &#9822; bube</p>
+
+    </footer>
+
+
+
+
+
+
+</body>
+
+</html>
